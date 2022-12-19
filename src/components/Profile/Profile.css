@@ -1,0 +1,25 @@
+.profile-name-pic img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.profile-name-pic{
+    display: flex;
+    gap: 5px;
+    
+}
+.profile-name-pic p{
+    width: 200%;
+    font-weight: 900;
+}
+
+.height-weight-age{
+    height: 70px;
+    width: 170%;
+    background-color: rgb(208, 203, 203);
+    margin-top: 15px;
+    border-radius: 10px;
+    margin-left: none;
+    padding-right: 5px;
+}

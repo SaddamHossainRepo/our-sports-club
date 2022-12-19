@@ -13,12 +13,20 @@ const Club = () => {
         .then(data => setGames(data))
     },[])
 
+    const handleAddToClick = (game)=>{
+        console.log(game);
+    }
+
     return (
         <div className='club-section'>
             
             <div className="games-section">
                 {
-                    games.map(game=> <Games name={game.name} image={game.picture}></Games> )
+                    games.map(game => <Games 
+                        key={game.id}
+                        game={game} 
+                        handleAddToClick={handleAddToClick}
+                        ></Games> )
                 }
             </div>
 

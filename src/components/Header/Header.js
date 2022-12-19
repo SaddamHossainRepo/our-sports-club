@@ -1,11 +1,15 @@
 import React from 'react';
 import './Header.css'
-
+import logo from '../../images/sports.png'
 const Header = () => {
     return (
-        <div className='header'>
-            <h1 style={{color:'lightblue'}}>Our-Sporting-Club</h1>
-        </div>
+        <nav className='header'>
+            <img src={logo} alt="" />
+            <div>
+                <h1>Our-Sporting-Club</h1>
+                <p>select Today's Sport</p>
+            </div>
+        </nav>
     );
 };
 
