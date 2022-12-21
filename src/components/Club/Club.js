@@ -15,7 +15,9 @@ const Club = () => {
         const newTime = JSON.parse(exerciseTime) + JSON.parse(event); 
         // const newTime = [...exerciseTime, event]
         setExerciseTime(newTime);
-        console.log('clicked',newTime);
+        const dataInLocalStorage = localStorage.setItem('Playing Time', event)
+        // console.log(dataInLocalStorage);
+        // console.log('clicked',newTime);
 
     }
 

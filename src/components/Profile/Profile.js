@@ -7,6 +7,8 @@ const Profile = (props) => {
     
     const handleChange = event => {
         setAddBreakTime(event.target.value);
+        const breakTime = JSON.parse(event.target.value);
+        localStorage.setItem('BreakTime', breakTime);
     }
 
     return (
