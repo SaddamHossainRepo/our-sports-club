@@ -6,8 +6,18 @@ import './Club.css'
 
 const Club = () => {
     const [games, setGames] = useState([]);
-    const [time, setTime] = useState('');
-    const [updatedTime, setUpdatedTime] = useState(time);
+    
+    // const [exerciseTime, setExerciseTime] = useState([]);
+    const [exerciseTime, setExerciseTime] = useState(0);
+ 
+
+    const handleExerciseTime = (event) =>{
+        const newTime = JSON.parse(exerciseTime) + JSON.parse(event); 
+        // const newTime = [...exerciseTime, event]
+        setExerciseTime(newTime);
+        console.log('clicked',newTime);
+
+    }
 
     useEffect(()=>{
         fetch('game-data.json')
@@ -15,13 +25,7 @@ const Club = () => {
         .then(data => setGames(data))
     },[])
 
-    const handleTimeChange = event =>{
-        setTime(event.target.value);
-    }
-
-    const handleAddToClick = (game) =>{
-        console.log('clicked', game.id);
-    }
+    
 
     return (
         <div className='club-section'>
@@ -30,14 +34,20 @@ const Club = () => {
                 {
                     games.map(game => <Games 
                         key={game.id}
+                        time={game.time}
                         game={game} 
-                        handleAddToClick={handleAddToClick}
+                        handleExerciseTime={handleExerciseTime}
                         ></Games> )
                 }
             </div>
 
             <div className="profile-section">
-                <Profile games={games}></Profile>
+                {/* <h1>{exerciseTime}</h1> */}
+                <Profile 
+                games={games}
+                exerciseTime={exerciseTime}
+                
+                ></Profile>
                 
             </div>
         </div>

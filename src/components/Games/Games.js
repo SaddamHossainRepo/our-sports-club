@@ -2,7 +2,10 @@ import React from 'react';
 import './Games.css'
 
 const Games = (props) => {
+    
     const {name, picture, time, age,  description} = props.game;
+    const {handleExerciseTime} = props;
+    console.log(time);
     
     return (
         <div className='game'>
@@ -14,7 +17,7 @@ const Games = (props) => {
                 <p>Age: {age}</p>
             </div>
             
-            <button  className='add-btn'>
+            <button value={time} onClick={()=>handleExerciseTime(time)}  className='add-btn'>
                     <p>Ad to List</p>
             </button>
             

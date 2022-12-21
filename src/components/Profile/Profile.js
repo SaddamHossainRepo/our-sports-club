@@ -3,23 +3,17 @@ import profilePhoto from '../../images/profile.jpg'
 import './Profile.css'
 
 const Profile = (props) => {
-    const [breakTime, setBreakTime] = useState();
-    const [addBreakTime, setAddBreakTime] = useState()
+    const [addBreakTime, setAddBreakTime] = useState(0)
     
-    const handleChange = event =>{
+    const handleChange = event => {
         setAddBreakTime(event.target.value);
-        // setAddBreakTime(value)
     }
 
-    // const handleBreak = () =>{
-    //     setAddBreakTime(breakTime);
-    // }
-    
     return (
         <div>
 
             <div className="profile-name-pic">
-                
+
                 <img src={profilePhoto} alt="" />
                 <p><small>Saddam Hossain</small></p>
             </div>
@@ -42,7 +36,7 @@ const Profile = (props) => {
                 <button value={10} onClick={handleChange}>10min</button>
                 <button value={15} onClick={handleChange}>15min</button>
                 <button value={20} onClick={handleChange}>20min</button>
-                
+
             </div>
             <div>
                 <p style={{ 'margin-top': '20px', 'font-weight': '500' }}>Exercise Details</p>
@@ -50,7 +44,7 @@ const Profile = (props) => {
             <div>
                 <div className='time-in-minute'>
                     <p>Playing Time</p>
-                    <p>10 min</p>
+                    <p>{props.exerciseTime}min</p>
 
                 </div>
             </div>
