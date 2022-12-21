@@ -6,6 +6,8 @@ import './Club.css'
 
 const Club = () => {
     const [games, setGames] = useState([]);
+    const [time, setTime] = useState('');
+    const [updatedTime, setUpdatedTime] = useState(time);
 
     useEffect(()=>{
         fetch('game-data.json')
@@ -13,8 +15,12 @@ const Club = () => {
         .then(data => setGames(data))
     },[])
 
-    const handleAddToClick = (game)=>{
-        console.log(game);
+    const handleTimeChange = event =>{
+        setTime(event.target.value);
+    }
+
+    const handleAddToClick = (game) =>{
+        console.log('clicked', game.id);
     }
 
     return (
@@ -31,7 +37,8 @@ const Club = () => {
             </div>
 
             <div className="profile-section">
-                <Profile></Profile>
+                <Profile games={games}></Profile>
+                
             </div>
         </div>
     );

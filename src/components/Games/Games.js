@@ -2,9 +2,7 @@ import React from 'react';
 import './Games.css'
 
 const Games = (props) => {
-    console.log(props);
     const {name, picture, time, age,  description} = props.game;
-    const {handleAddToClick} = props;
     
     return (
         <div className='game'>
@@ -16,7 +14,7 @@ const Games = (props) => {
                 <p>Age: {age}</p>
             </div>
             
-            <button onClick={()=>handleAddToClick(props.game)} className='add-btn'>
+            <button  className='add-btn'>
                     <p>Ad to List</p>
             </button>
             

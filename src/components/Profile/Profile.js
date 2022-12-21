@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import profilePhoto from '../../images/profile.jpg'
 import './Profile.css'
 
-const Profile = () => {
+const Profile = (props) => {
+    const [breakTime, setBreakTime] = useState();
+    const [addBreakTime, setAddBreakTime] = useState()
+    
+    const handleChange = event =>{
+        setAddBreakTime(event.target.value);
+        console.log(event.target.value);
+    }
+    const handleBreak = () =>{
+        setAddBreakTime(breakTime);
+    }
+    
     return (
         <div>
+
             <div className="profile-name-pic">
+                
                 <img src={profilePhoto} alt="" />
                 <p><small>Saddam Hossain</small></p>
             </div>
@@ -24,10 +37,11 @@ const Profile = () => {
                 <p style={{ 'margin-top': '20px', 'font-weight': '500' }}>Add a Break</p>
             </div>
             <div className='time-in-minute'>
-                <a href="">5min</a>
-                <a href="">10min</a>
-                <a href="">15min</a>
-                <a href="">20min</a>
+                <button value={breakTime} onClick={handleBreak}>5 min</button>
+                <button>10min</button>
+                <button>15min</button>
+                <button>20min</button>
+                
             </div>
             <div>
                 <p style={{ 'margin-top': '20px', 'font-weight': '500' }}>Exercise Details</p>
@@ -35,13 +49,14 @@ const Profile = () => {
             <div>
                 <div className='time-in-minute'>
                     <p>Playing Time</p>
-                    <p>10min</p>
+                    <p>10 min</p>
+
                 </div>
             </div>
             <div>
                 <div className='time-in-minute'>
                     <p>Break Time</p>
-                    <p>20min</p>
+                    <p>{breakTime}</p>
                 </div>
             </div>
         </div>
