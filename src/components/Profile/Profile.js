@@ -8,11 +8,12 @@ const Profile = (props) => {
     
     const handleChange = event =>{
         setAddBreakTime(event.target.value);
-        console.log(event.target.value);
+        // setAddBreakTime(value)
     }
-    const handleBreak = () =>{
-        setAddBreakTime(breakTime);
-    }
+
+    // const handleBreak = () =>{
+    //     setAddBreakTime(breakTime);
+    // }
     
     return (
         <div>
@@ -37,10 +38,10 @@ const Profile = (props) => {
                 <p style={{ 'margin-top': '20px', 'font-weight': '500' }}>Add a Break</p>
             </div>
             <div className='time-in-minute'>
-                <button value={breakTime} onClick={handleBreak}>5 min</button>
-                <button>10min</button>
-                <button>15min</button>
-                <button>20min</button>
+                <button value={5} onClick={handleChange}>5 min</button>
+                <button value={10} onClick={handleChange}>10min</button>
+                <button value={15} onClick={handleChange}>15min</button>
+                <button value={20} onClick={handleChange}>20min</button>
                 
             </div>
             <div>
@@ -56,7 +57,7 @@ const Profile = (props) => {
             <div>
                 <div className='time-in-minute'>
                     <p>Break Time</p>
-                    <p>{breakTime}</p>
+                    <p>{addBreakTime} min</p>
                 </div>
             </div>
         </div>
