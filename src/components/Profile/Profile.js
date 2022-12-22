@@ -12,7 +12,7 @@ const Profile = (props) => {
     }
 
     return (
-        <div>
+        <div className='profile'>
 
             <div className="profile-name-pic">
 
