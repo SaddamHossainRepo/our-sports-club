@@ -46,7 +46,7 @@ const Profile = (props) => {
             <div>
                 <div className='time-in-minute'>
                     <p>Playing Time</p>
-                    <p>{props.exerciseTime}min</p>
+                    <p>{props.exerciseTime} min</p>
 
                 </div>
             </div>

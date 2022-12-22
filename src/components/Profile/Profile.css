@@ -16,7 +16,7 @@
 
 .height-weight-age-number{
     height: 80px;
-    width: 145%;
+    width: 110%;
     background-color: rgb(208, 203, 203);
     margin-top: 5px;
     border-radius: 10px;
@@ -48,7 +48,7 @@
 
 .time-in-minute{
     height: 55px;
-    width: 140%;
+    width: 120%;
     background-color: rgb(208, 203, 203);
     margin-top: 5px;
     border-radius: 10px;
